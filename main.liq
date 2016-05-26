@@ -25,14 +25,14 @@ insert   = fst(meta)
 radio    = snd(meta)
 
 # output.icecast(%ogg(%flac(channels=2, samplerate=44100, bits_per_sample=16)),
-#   host="localhost",port=4088,password=icecast-password,
+#   host="localhost",port=4088,password=icecastpassword,
 #   mount="live.flac",radio)
 output.icecast(%ogg(%vorbis.abr(channels=2, samplerate=44100, bitrate=256)),
-  host="localhost",port=4088,password=icecast-password,
+  host="localhost",port=4088,password=icecastpassword,
   name="WMBC (Vorbis)",genre="Various",url="wmbc.umbc.edu",description="UMBC's Student Uncensored Freeform Radio",
   mount="live.ogg",radio)
 output.icecast(%mp3.abr(stereo=true, samplerate=44100, bitrate=256), 
-  host="localhost",port=4088,password=icecast-password,
+  host="localhost",port=4088,password=icecastpassword,
   name="WMBC (MPEG)",genre="Various",url="wmbc.umbc.edu",description="UMBC's Student Uncensored Freeform Radio",
   mount="live.mp3",radio)
 output.jack(id="monitor", radio)
